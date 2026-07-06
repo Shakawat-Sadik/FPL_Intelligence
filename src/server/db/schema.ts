@@ -1,12 +1,17 @@
 import { pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
 export const users = pgTable("users", // pgTable tells Drizzle that this is a PostgreSQL table, and "users" is the name of the table in the database
 {
-  id: uuid("id").defaultRandom().primaryKey(), 
+  id: uuid("id").defaultRandom().primaryKey(),
   email: varchar("email", { length: 255 }).notNull().unique(),
   name: varchar("name", { length: 255 }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+// Auto-generated Zod schemas from the Drizzle table — used by tRPC for input validation.
+export const insertUserSchema = createInsertSchema(users);
+export const selectUserSchema = createSelectSchema(users);
 
 /*
 uuid("id") = Creates a column named id that stores a UUID (Universally Unique Identifier).

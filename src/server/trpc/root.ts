@@ -1,5 +1,5 @@
 import { initTRPC } from "@trpc/server";
-import { db } from "@/db";
+import { db } from "@/server/db";
 
 export const createTRPCContext = async (opts: { req: Request }) => {
   return {

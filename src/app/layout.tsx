@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat, Merriweather } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { TRPCProvider } from "@/components/providers/trpc-providers";
 
-const merriweatherHeading = Merriweather({subsets:['latin'],variable:'--font-heading'});
+const merriweatherHeading = Merriweather({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 
-const montserrat = Montserrat({subsets:['latin'],variable:'--font-sans'});
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +34,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", montserrat.variable, merriweatherHeading.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        montserrat.variable,
+        merriweatherHeading.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <TRPCProvider>
+          {children}
+        </TRPCProvider>
+      </body>
     </html>
   );
 }

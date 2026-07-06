@@ -17,6 +17,9 @@ importers:
       '@trpc/client':
         specifier: ^11.18.0
         version: 11.18.0(@trpc/server@11.18.0(typescript@5.9.3))(typescript@5.9.3)
+      '@trpc/react-query':
+        specifier: ^11.18.0
+        version: 11.18.0(@tanstack/react-query@5.101.2(react@19.2.4))(@trpc/client@11.18.0(@trpc/server@11.18.0(typescript@5.9.3))(typescript@5.9.3))(@trpc/server@11.18.0(typescript@5.9.3))(react@19.2.4)(typescript@5.9.3)
       '@trpc/server':
         specifier: ^11.18.0
         version: 11.18.0(typescript@5.9.3)
@@ -90,6 +93,9 @@ importers:
       drizzle-kit:
         specifier: ^0.31.10
         version: 0.31.10
+      drizzle-zod:
+        specifier: ^0.8.3
+        version: 0.8.3(drizzle-orm@0.45.2(@types/pg@8.20.0)(kysely@0.29.2)(pg@8.22.0))(zod@4.4.3)
       eslint:
         specifier: ^9
         version: 9.39.4(jiti@2.7.0)
@@ -1954,6 +1960,15 @@ packages:
       '@trpc/server': 11.18.0
       typescript: '>=5.7.2'
 
+  '@trpc/react-query@11.18.0':
+    resolution: {integrity: sha512-C1+Wwm2pCeUJucI+bnFpxGYjNuvV+ko1BC1T9tUxBVdrhHRCdn9ubxdevdLSAa49XRJRJiZnSuzl3Ys/yvs1vg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.80.3
+      '@trpc/client': 11.18.0
+      '@trpc/server': 11.18.0
+      react: '>=18.2.0'
+      typescript: '>=5.7.2'
+
   '@trpc/server@11.18.0':
     resolution: {integrity: sha512-JAvXOuNTxgXjIDfQaOvDq1j66LMNfDJUH1IU7Slfn8EvRv2EkH6ehu3A7zpYhjO0syHHiYg77v2lG2JFJgvw7Q==}
     hasBin: true
@@ -2734,6 +2749,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-zod@0.8.3:
+    resolution: {integrity: sha512-66yVOuvGhKJnTdiqj1/Xaaz9/qzOdRJADpDa68enqS6g3t0kpNkwNYjUuaeXgZfO/UWuIM9HIhSlJ6C5ZraMww==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.0'
+      zod: ^3.25.0 || ^4.0.0
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -6182,6 +6203,14 @@ snapshots:
       '@trpc/server': 11.18.0(typescript@5.9.3)
       typescript: 5.9.3
 
+  '@trpc/react-query@11.18.0(@tanstack/react-query@5.101.2(react@19.2.4))(@trpc/client@11.18.0(@trpc/server@11.18.0(typescript@5.9.3))(typescript@5.9.3))(@trpc/server@11.18.0(typescript@5.9.3))(react@19.2.4)(typescript@5.9.3)':
+    dependencies:
+      '@tanstack/react-query': 5.101.2(react@19.2.4)
+      '@trpc/client': 11.18.0(@trpc/server@11.18.0(typescript@5.9.3))(typescript@5.9.3)
+      '@trpc/server': 11.18.0(typescript@5.9.3)
+      react: 19.2.4
+      typescript: 5.9.3
+
   '@trpc/server@11.18.0(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
@@ -6814,6 +6843,11 @@ snapshots:
       '@types/pg': 8.20.0
       kysely: 0.29.2
       pg: 8.22.0
+
+  drizzle-zod@0.8.3(drizzle-orm@0.45.2(@types/pg@8.20.0)(kysely@0.29.2)(pg@8.22.0))(zod@4.4.3):
+    dependencies:
+      drizzle-orm: 0.45.2(@types/pg@8.20.0)(kysely@0.29.2)(pg@8.22.0)
+      zod: 4.4.3
 
   dunder-proto@1.0.1:
     dependencies:
