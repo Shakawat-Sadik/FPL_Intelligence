@@ -5,7 +5,7 @@ export const createTRPCContext = async (opts: { req: Request }) => {
   return {
     db,
     // We will pass the request to BetterAuth here later
-    // req: opts.req
+    req: opts.req
   };
 };
 
