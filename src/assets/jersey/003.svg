@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>ARS</title>
+  <defs>
+    <!-- shared shirt template -->
+    <path id="k003-body" d="M208,18 L112,38 L14,146 L66,190 L108,142 L110,496 L402,496 L404,142 L446,190 L498,146 L400,38 L304,18 Q256,62 208,18 Z"/>
+    <path id="k003-outer" d="M208,18 L112,38 L14,146 L66,190 L108,142 L110,496 L402,496 L404,142 L446,190 L498,146 L400,38 L304,18 Q256,2 208,18 Z"/>
+    <clipPath id="k003-body-clip"><use href="#k003-body"/></clipPath>
+    <clipPath id="k003-outer-clip"><use href="#k003-outer"/></clipPath>
+
+    <!-- raglan sleeve panels -->
+    <path id="k003-panel-l" d="M234,36 Q180,100 108,142 L40,220 L-20,140 L60,-10 L240,-10 Z"/>
+    <path id="k003-panel-r" d="M278,36 Q332,100 404,142 L472,220 L532,140 L452,-10 L272,-10 Z"/>
+    <clipPath id="k003-panels-clip">
+      <use href="#k003-panel-l"/>
+      <use href="#k003-panel-r"/>
+    </clipPath>
+
+    <pattern id="k003-trim" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#7A1F2B"/>
+      <path d="M0,3 L3,0 L6,3 L3,6 Z" fill="#A5122A"/>
+    </pattern>
+
+    <!-- emblem, drawn in a 512 box -->
+    <path id="k003-em-outer" d="M256,4 C330,4 400,30 460,72 C470,150 468,240 440,320 C410,400 340,470 256,508 C172,470 102,400 72,320 C44,240 42,150 52,72 C112,30 182,4 256,4 Z"/>
+    <path id="k003-em-inner" d="M256,36 C322,36 382,58 432,92 C436,160 434,236 410,308 C382,384 322,444 256,478 C190,444 130,384 102,308 C78,236 76,160 80,92 C130,58 190,36 256,36 Z"/>
+    <path id="k003-em-white" d="M112,-20 H400 C408,80 408,200 390,290 C366,380 312,440 256,470 C200,440 146,380 122,290 C104,200 104,80 112,-20 Z"/>
+    <path id="k003-em-red" d="M140,-20 H372 C378,80 378,200 362,280 C340,370 300,425 256,452 C212,425 172,370 150,280 C134,200 134,80 140,-20 Z"/>
+    <clipPath id="k003-em-inner-clip"><use href="#k003-em-inner"/></clipPath>
+    <clipPath id="k003-em-left"><rect x="0" y="0" width="256" height="512"/></clipPath>
+    <clipPath id="k003-em-right"><rect x="256" y="0" width="256" height="512"/></clipPath>
+  </defs>
+
+  <!-- inside of the neck -->
+  <path d="M208,18 Q256,2 304,18 Q256,62 208,18 Z" fill="#8E0A14"/>
+
+  <!-- body -->
+  <use href="#k003-body" fill="#DA121A"/>
+
+  <g clip-path="url(#k003-body-clip)">
+    <!-- tonal chevron -->
+    <path d="M60,100 L256,330 L452,100 L412,100 L256,286 L100,100 Z" fill="#000000" fill-opacity="0.04"/>
+
+    <!-- white raglan sleeves -->
+    <use href="#k003-panel-l" fill="#FFFFFF"/>
+    <use href="#k003-panel-r" fill="#FFFFFF"/>
+
+    <!-- shoulder stripes -->
+    <g clip-path="url(#k003-panels-clip)" fill="none" stroke="#7A1F2B" stroke-width="6" stroke-linejoin="round">
+      <path d="M229.2,21.7 L116.2,45.3 L75.9,89.7"/>
+      <path d="M231.3,31.5 L121.4,54.4 L81.1,98.8"/>
+      <path d="M233.3,41.3 L126.6,63.6 L86.3,108"/>
+      <path d="M282.8,21.7 L395.8,45.3 L436.1,89.7"/>
+      <path d="M280.7,31.5 L390.6,54.4 L430.9,98.8"/>
+      <path d="M278.7,41.3 L385.4,63.6 L425.7,108"/>
+    </g>
+
+    <!-- cuffs -->
+    <path d="M3.9,145.2 L68.1,199.6 L81.5,184.8 L17.3,130.4 Z" fill="url(#k003-trim)"/>
+    <path d="M508.1,145.2 L443.9,199.6 L430.5,184.8 L494.7,130.4 Z" fill="url(#k003-trim)"/>
+  </g>
+
+  <!-- collar -->
+  <path d="M212,20 Q256,8 300,20" fill="none" stroke="url(#k003-trim)" stroke-width="6"/>
+  <path d="M208,18 Q256,62 304,18" fill="none" stroke="url(#k003-trim)" stroke-width="11"/>
+
+  <!-- flat two-tone shading, right half -->
+  <rect x="256" y="0" width="256" height="512" fill="#000000" fill-opacity="0.08" clip-path="url(#k003-outer-clip)"/>
+
+  <!-- adidas -->
+  <g transform="translate(148 166)" fill="#F2EBDD">
+    <path d="M0,0 L7,-12.12 L14.5,-7.79 L10,0 Z"/>
+    <path d="M14.5,0 L27.5,-22.52 L35,-18.19 L24.5,0 Z"/>
+    <path d="M29,0 L48,-32.9 L55.5,-28.58 L39,0 Z"/>
+  </g>
+
+  <!-- emblem -->
+  <g transform="translate(302.7 116.7) scale(0.13)">
+    <g clip-path="url(#k003-em-left)">
+      <use href="#k003-em-outer" fill="#FFAF3A"/>
+      <g clip-path="url(#k003-em-inner-clip)">
+        <use href="#k003-em-inner" fill="#0077AA"/>
+        <use href="#k003-em-white" fill="#FFFFFF"/>
+        <use href="#k003-em-red" fill="#FF0027"/>
+        <rect x="104" y="170" width="304" height="70" fill="#FFAF3A"/>
+        <path d="M210,292 Q165,330 95,345" fill="none" stroke="#FFAF3A" stroke-width="24"/>
+        <circle cx="256" cy="254" r="86" fill="#FF9138"/>
+        <circle cx="256" cy="254" r="30" fill="#FF0027"/>
+      </g>
+    </g>
+    <g clip-path="url(#k003-em-right)">
+      <use href="#k003-em-outer" fill="#FF9138"/>
+      <g clip-path="url(#k003-em-inner-clip)">
+        <use href="#k003-em-inner" fill="#005E88"/>
+        <use href="#k003-em-white" fill="#EEF4F8"/>
+        <use href="#k003-em-red" fill="#D80027"/>
+        <rect x="104" y="170" width="304" height="70" fill="#FF9138"/>
+        <circle cx="256" cy="254" r="86" fill="#FF6B35"/>
+        <circle cx="256" cy="254" r="30" fill="#D80027"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- faint outline so white sleeves read on light backgrounds -->
+  <use href="#k003-outer" fill="none" stroke="#000000" stroke-opacity="0.12" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
